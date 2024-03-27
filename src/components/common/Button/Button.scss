@@ -1,0 +1,37 @@
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+  border-radius: 50px;
+  min-width: 80px;
+  min-height: 30px;
+  border: black 1px solid;
+}
+
+.brwon {
+  background-color: #b88e2f;
+  color: #fff;
+  border-radius: 5px;
+  min-width: 200px;
+}
+
+.smPrimary {
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+  border-radius: 50px;
+  min-width: 80px;
+  min-height: 30px;
+  border: black 1px solid;
+}
+
+.danger {
+  background-color: #dc3545;
+  color: #fff;
+}
