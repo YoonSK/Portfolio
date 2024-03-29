@@ -1,10 +1,10 @@
 import React from "react";
-import Button from "./components/common/Button/Button";
+import Input from "./components/common/Input/Input";
 
 const App: React.FC = () => {
   return (
     <div>
-      <Button variant="primary">Add to Cart</Button>
+      <Input type="text" placeholder="Please help me" />
     </div>
   );
 };

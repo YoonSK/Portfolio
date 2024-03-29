@@ -1,0 +1,9 @@
+.input {
+  border-radius: 5px;
+  border: 1px solid #9f9f9f;
+  min-height: 40px;
+}
+
+.input::placeholder {
+  padding: 20px;
+}
