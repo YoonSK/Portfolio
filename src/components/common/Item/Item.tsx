@@ -1,4 +1,5 @@
 import React from "react";
+import "./Item.scss";
 
 type ItemProps = {
   id: number;
@@ -20,10 +21,12 @@ const Item: React.FC<ItemProps> = ({
       <div className="product_img_div">
         <img src={image} className="product_img" alt={title} />
       </div>
-      <input type="hidden" value={id} />
-      <h5 className="product_titme">상품 제목 : {title}</h5>
-      <p className="product_des">상품 내용 요약 : {description}</p>
-      <div className="product_price">상품 가격 : {price}</div>
+      <div className="product_text">
+        <input type="hidden" value={id} />
+        <b className="product_titme">{title}</b>
+        <p className="product_des">{description}</p>
+        <b className="product_price">{price}</b>
+      </div>
     </div>
   );
 };

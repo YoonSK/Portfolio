@@ -28,18 +28,33 @@ const Home: React.FC = () => {
     getProducts();
   }, []);
 
+  const [visibleProducts, setVisibleProducts] = useState<number>(8);
+  const handleShowMore = () => {
+    setVisibleProducts((prevVisibleProducts) => prevVisibleProducts + 8);
+  };
+
   return (
-    <div>
-      {products.map((product) => (
-        <Item
-          key={product.id}
-          id={product.id}
-          image={product.image}
-          title={product.title}
-          description={product.description}
-          price={product.price}
-        />
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+      }}
+    >
+      {products.slice(0, visibleProducts).map((product, index) => (
+        <div key={index} style={{ flexBasis: "25%", padding: "5px" }}>
+          <Item
+            key={index}
+            id={product.id}
+            image={product.image}
+            title={product.title}
+            description={product.description}
+            price={product.price}
+          />
+        </div>
       ))}
+      {visibleProducts < products.length && (
+        <button onClick={handleShowMore}>Show More</button>
+      )}
     </div>
   );
 };
