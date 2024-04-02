@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import Button from "../components/common/Button/Button";
 import Item from "../components/common/Item/Item";
 
 type ProductType = {
@@ -30,6 +30,7 @@ const Home: React.FC = () => {
 
   const [visibleProducts, setVisibleProducts] = useState<number>(8);
   const handleShowMore = () => {
+    console.log("탐");
     setVisibleProducts((prevVisibleProducts) => prevVisibleProducts + 8);
   };
 
@@ -53,7 +54,15 @@ const Home: React.FC = () => {
         </div>
       ))}
       {visibleProducts < products.length && (
-        <button onClick={handleShowMore}>Show More</button>
+        <Button
+          size="md"
+          variant="outline"
+          className="border-black"
+          onClick={() => handleShowMore()}
+        >
+          Show More
+        </Button>
+        // <button onClick={() => handleShowMore()}>ShowMore</button>
       )}
     </div>
   );
