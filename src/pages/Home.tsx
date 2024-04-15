@@ -71,18 +71,21 @@ const Home: React.FC = () => {
               />
             </div>
           ))}
-          {visibleProducts < products.length && (
+        </div>
+        {visibleProducts < products.length && (
+          <div style={{ paddingLeft: "40%", marginBottom: "2%" }}>
             <Button
               size="md"
               variant="outline"
-              className="border-black"
+              color="brown"
+              rounded="none"
               onClick={() => handleShowMore()}
             >
               Show More
             </Button>
-            // <button onClick={() => handleShowMore()}>ShowMore</button>
-          )}
-        </div>
+          </div>
+          // <button onClick={() => handleShowMore()}>ShowMore</button>
+        )}
       </div>
     </>
   );

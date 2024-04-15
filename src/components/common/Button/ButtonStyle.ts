@@ -1,7 +1,7 @@
 import { ButtonRounded, ButtonSize, ButtonColor } from "./Button";
 
 export const buttonCommonStyles = {
-  common: "rounded border-solid",
+  common: "rounded border-solid border-2",
 };
 export const buttonSizes: { [x in ButtonSize]: string } = {
   sm: "min-w-[87px] min-h-[30px] text-sm",
@@ -10,13 +10,18 @@ export const buttonSizes: { [x in ButtonSize]: string } = {
 };
 
 export const buttonRounded: { [x in ButtonRounded]: string } = {
+  none: "rounded-none",
   sm: "rounded-sm",
   default: "rounded",
   full: "rounded-full",
-  none: "rounded-none",
 };
 
 export const buttonColors: { [x in ButtonColor]: string } = {
   primary: "bg-white text-black",
-  brown: "bg-brwon-button text-white",
+  brown: "bg-brown-button text-white",
+};
+
+export const buttonOutlines: { [x in ButtonColor]: string } = {
+  primary: "bg-white text-black",
+  brown: "bg-white-button text-brown border-solid border-1 border-brown",
 };

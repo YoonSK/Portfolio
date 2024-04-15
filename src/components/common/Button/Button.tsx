@@ -5,6 +5,7 @@ import {
   buttonRounded,
   buttonColors,
   buttonCommonStyles,
+  buttonOutlines,
 } from "./ButtonStyle";
 
 export type ButtonSize = "sm" | "md" | "lg";
@@ -38,8 +39,9 @@ const Button: React.FC<ButtonProps> = forwardRef<
     const classes = twMerge(
       buttonSizes[size],
       variant === "contain" && buttonColors[color],
-      buttonRounded[rounded],
+      variant === "outline" && buttonOutlines[color],
       buttonCommonStyles.common,
+      buttonRounded[rounded],
       className
     );
     return (
