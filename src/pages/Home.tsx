@@ -30,41 +30,61 @@ const Home: React.FC = () => {
 
   const [visibleProducts, setVisibleProducts] = useState<number>(8);
   const handleShowMore = () => {
-    console.log("탐");
     setVisibleProducts((prevVisibleProducts) => prevVisibleProducts + 8);
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-      }}
-    >
-      {products.slice(0, visibleProducts).map((product, index) => (
-        <div key={index} style={{ flexBasis: "25%", padding: "5px" }}>
-          <Item
-            key={index}
-            id={product.id}
-            image={product.image}
-            title={product.title}
-            description={product.description}
-            price={product.price}
-          />
-        </div>
-      ))}
-      {visibleProducts < products.length && (
-        <Button
-          size="md"
-          variant="outline"
-          className="border-black"
-          onClick={() => handleShowMore()}
+    <>
+      <div
+        className="ourProducts"
+        style={{
+          width: "80%",
+          marginLeft: "10%",
+        }}
+      >
+        <div
+          style={{
+            textAlign: "center",
+            fontWeight: "bold",
+            fontSize: "large",
+          }}
         >
-          Show More
-        </Button>
-        // <button onClick={() => handleShowMore()}>ShowMore</button>
-      )}
-    </div>
+          Our Products
+        </div>
+        <div
+          style={{
+            display: "grid",
+            padding: "16px 24px",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: "16px",
+          }}
+        >
+          {products.slice(0, visibleProducts).map((product, index) => (
+            <div key={index} className="itembox">
+              <Item
+                key={index}
+                id={product.id}
+                image={product.image}
+                title={product.title}
+                description={product.description}
+                price={product.price}
+              />
+            </div>
+          ))}
+          {visibleProducts < products.length && (
+            <Button
+              size="md"
+              variant="outline"
+              className="border-black"
+              onClick={() => handleShowMore()}
+            >
+              Show More
+            </Button>
+            // <button onClick={() => handleShowMore()}>ShowMore</button>
+          )}
+        </div>
+      </div>
+    </>
   );
 };
 export default Home;
