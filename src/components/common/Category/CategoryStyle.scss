@@ -1,0 +1,22 @@
+.category {
+  border: 1px solid #ccc; /* 테두리를 추가합니다 */
+  height: 100%;
+}
+.category_img_div {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* 이미지가 div를 넘어가면 숨깁니다 */
+  flex: 0 0 auto;
+}
+.category_img {
+  max-width: 100%; /* 이미지의 최대 너비를 100%로 설정합니다 */
+  max-height: 100%; /* 이미지의 최대 높이를 100%로 설정합니다 */
+  object-fit: contain; /* 이미지가 div에 맞게 조정되도록 합니다 */
+}
+
+.product_des_div {
+  background: #f4f5f7;
+  height: calc(100% - 400px);
+}

@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Button from "../components/common/Button/Button";
 import Item from "../components/common/Item/Item";
+import mainImg from "../images/main_Image.png";
+
+import CategoryComponent from "../components/common/Category/CategoryComponent";
+import { categories } from "../components/common/Category/Category";
 
 type ProductType = {
   id: number;
@@ -35,19 +39,33 @@ const Home: React.FC = () => {
 
   return (
     <>
+      <div style={{ width: "80%", marginLeft: "10%" }}>
+        <img src={mainImg} />
+      </div>
+      <div style={{ textAlign: "center" }}>
+        <span
+          style={{ textAlign: "center", fontWeight: "bold", fontSize: "large" }}
+        >
+          Browse The Range{" "}
+        </span>
+        <br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
       <div
-        className="ourProducts"
         style={{
-          width: "80%",
-          marginLeft: "10%",
+          display: "grid",
+          padding: "16px 24px",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "16px",
         }}
       >
+        {categories.map((category) => (
+          <CategoryComponent key={category.id} category={category} />
+        ))}
+      </div>
+      <div className="ourProducts" style={{ width: "80%", marginLeft: "10%" }}>
         <div
-          style={{
-            textAlign: "center",
-            fontWeight: "bold",
-            fontSize: "large",
-          }}
+          style={{ textAlign: "center", fontWeight: "bold", fontSize: "large" }}
         >
           Our Products
         </div>

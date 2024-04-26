@@ -1,3 +1,5 @@
+const loader = require("sass-loader");
+
 module.exports = {
   env: {
     browser: true,
